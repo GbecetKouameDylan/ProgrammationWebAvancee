@@ -55,7 +55,7 @@ namespace Backend.Controllers
 
 
         }
-
+        
         public async Task<ActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -68,6 +68,7 @@ namespace Backend.Controllers
             return new string[] { "figue", "banane", "noix" };
         }
 
+        [HttpGet]
         public ActionResult<string[]> PublicData()
         {
             return new string[] { "chien", "chat", "loutre" };
