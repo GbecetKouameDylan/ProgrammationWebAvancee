@@ -87,6 +87,7 @@ C:\Users\Dylan\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\o
 C:\Users\Dylan\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\obj\Debug\net7.0\Backend.pdb
 C:\Users\Dylan\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\obj\Debug\net7.0\Backend.genruntimeconfig.cache
 C:\Users\Dylan\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\obj\Debug\net7.0\ref\Backend.dll
+C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\appsettings.json
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\Backend.staticwebassets.runtime.json
@@ -131,7 +132,6 @@ C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.CodeDom.dll
-C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.Drawing.Common.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\2164425\Desktop\ProgrammationWebAvancee\AuthentificationCookies\Backend\bin\Debug\net7.0\System.Memory.Data.dll

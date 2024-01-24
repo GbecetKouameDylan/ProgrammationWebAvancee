@@ -39,7 +39,7 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { Error = identityResult.Errors });
             }
 
-            return Ok();
+            return Ok(user);
         }
 
         [HttpPost("Login")]
@@ -48,14 +48,14 @@ namespace Backend.Controllers
             var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, true, lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                return Ok();
+                return Ok(login);
             }
 
             return NotFound(new { Error = "L'utilisateur est introuvable ou le mot de passe de concorde pas" });
 
 
         }
-        [HttpPost("Logout")]
+        [HttpGet("Logout")]
         public async Task<ActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

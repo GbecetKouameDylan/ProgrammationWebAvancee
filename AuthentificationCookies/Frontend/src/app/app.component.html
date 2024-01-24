@@ -10,11 +10,14 @@
     Enregistrer
   </button>
 </div>
-
+<div *ngIf="!isLoggedIn()">
 <button (click) ="Login()">
   Connecter
 </button>
+</div>
+<div *ngIf="isLoggedIn()">
 <button (click)="Logout()">
   Deconnecter
 
   </button>
+</div>

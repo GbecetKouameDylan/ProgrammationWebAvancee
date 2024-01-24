@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {lastValueFrom} from "rxjs";
+import {InterceptorInterceptor} from "./interceptor.interceptor";
+import {CookieService} from "ngx-cookie-service";
 
 
 
@@ -12,10 +14,10 @@ import {lastValueFrom} from "rxjs";
 export class AppComponent implements OnInit{
   title = 'Frontend';
 
-  constructor(public http : HttpClient) {
+  constructor(public http : HttpClient, private cookie:CookieService) {
   }
-user:Register = new Register("Dylan1111111","Dylan@gmail.com","Dylan123$","Dylan123$")
-Seed:Login = new Login("Dylan1111111","Dylan123$")
+user:Register = new Register("1","Dylan@gmail.com","Dylan123$","Dylan123$")
+Seed:Login = new Login("1","Dylan123$")
 async Register()
 {
   let options = { withCredentials:true };
@@ -32,23 +34,24 @@ async Public()
 
 async Private()
 {
-  let options = { withCredentials:true };
-  let result = await lastValueFrom(this.http.get<any>('https://localhost:7086/api/Account/PrivateData', options));
+  let result = await lastValueFrom(this.http.get<any>('https://localhost:7086/api/Account/PrivateData'));
+  console.log(result)
 }
   async Logout()
   {
-    let options = { withCredentials:true };
-    let result = await lastValueFrom(this.http.post<any>('https://localhost:7086/api/Account/Logout',options));
+
+    let result = await lastValueFrom(this.http.get<any>('https://localhost:7086/api/Account/Logout'));
     console.log(result)
   }
 
   async Login()
   {
-    let options = { withCredentials:true };
     let result = await lastValueFrom(this.http.post<any>('https://localhost:7086/api/Account/Login',this.Seed));
-    console.log(this.Seed)
+    console.log(result)
   }
-
+  isLoggedIn(){
+    return this.cookie.get(".AspNetCore.Identity.Application");
+  }
   ngOnInit(): void {
 this.Public()
 
