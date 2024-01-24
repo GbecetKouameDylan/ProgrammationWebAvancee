@@ -19,7 +19,7 @@ namespace Backend.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpPost]
+        [HttpPost("Register")]
         public async Task<ActionResult> Register(RegisterDTO register)
         {
             if (register.Password != register.PasswordConfirm)
@@ -42,8 +42,8 @@ namespace Backend.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Login(RegisterDTO login)
+        [HttpPost("Login")]
+        public async Task<ActionResult> Login(LoginDTO login)
         {
             var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, true, lockoutOnFailure: false);
             if (result.Succeeded)
@@ -63,12 +63,13 @@ namespace Backend.Controllers
         }
 
         [Authorize]
+        [HttpGet("PrivateData")]
         public ActionResult<string[]> PrivateData()
         {
             return new string[] { "figue", "banane", "noix" };
         }
 
-        [HttpGet]
+        [HttpGet("PublicData")]
         public ActionResult<string[]> PublicData()
         {
             return new string[] { "chien", "chat", "loutre" };
