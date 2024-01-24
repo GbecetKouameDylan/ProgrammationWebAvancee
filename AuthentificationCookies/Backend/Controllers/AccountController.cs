@@ -55,7 +55,7 @@ namespace Backend.Controllers
 
 
         }
-        
+        [HttpPost("Logout")]
         public async Task<ActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
