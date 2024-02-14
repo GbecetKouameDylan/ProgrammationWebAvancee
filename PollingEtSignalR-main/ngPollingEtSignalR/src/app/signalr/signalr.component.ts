@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as signalR from "@microsoft/signalr"
 import { UselessTask } from '../models/UselessTask';
 
-
 @Component({
   selector: 'app-signalr',
   templateUrl: './signalr.component.html',
@@ -21,17 +20,29 @@ export class SignalrComponent implements OnInit {
 
   connecttohub() {
     // TODO On doit commencer par créer la connexion vers le Hub
-
+    this.hubConnection = new signalR.HubConnectionBuilder()
+      .withUrl('https://localhost:7289/TacheHub')
+      .build();
     // TODO On doit ensuite se connecter
-    // TODO Une fois connectée, on peut commencer à écouter pour les évènements qui vont déclencher des callbacks
+    this.hubConnection
+      .start()
+
   }
 
-  complete(id: number) {
+
+
+ async complete(id: number) {
     // TODO On invoke la méthode pour compléter une tâche sur le serveur
+let r = await this.hubConnection!.invoke('Complete',id)
+
   }
 
-  addtask() {
+  async addtask() {
     // TODO On invoke la méthode pour ajouter une tâche sur le serveur
+  let r = await this.hubConnection!.invoke('Add',this.taskname)
+    console.log(r.value.text)
+
+this.tasks.push(r.value)
   }
 
 }

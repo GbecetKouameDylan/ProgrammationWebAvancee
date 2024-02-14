@@ -13,6 +13,12 @@
       <mat-checkbox (change)="complete(task.id)" [(ngModel)]="task.completed" [disabled]="task.completed" [class.completed]="task.completed">
         {{task.text}}
       </mat-checkbox>
+
     </li>
   </ul>
 </mat-card>
+
+<div>
+  <p>Nombre de user</p>
+  {{usercount}}
+</div>

@@ -1,5 +1,5 @@
-export class UselessTask {
-  constructor(public id:number,public text:string,public completed:boolean) {
-  }
-
+export interface  UselessTask {
+  id: number,
+  text: string,
+  completed: boolean
 }
