@@ -11,30 +11,43 @@
     <mat-form-field style="width: 100%">
         <mat-label>Nom</mat-label>
         <input matInput type="text" placeholder="Nom et prénom" name="name" >
-        
+
+      <mat-error *ngIf="form.get('name')?.hasError('required')">
+        Votre nom est <strong>requis</strong>
+      </mat-error>
+
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Numéro de rue</mat-label>
       <input matInput type="number" placeholder="5230" name="roadnumber">
-      
+      <mat-error *ngIf="form.get('roadnumber')?.hasError('required')">
+        Votre nom est <strong>requis</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
         <mat-label>Rue</mat-label>
         <input matInput type="text" placeholder="Resther" name="rue">
+      <mat-error *ngIf="form.get('rue')?.hasError('required')">
+        Votre nom est <strong>requis</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Code Postal</mat-label>
       <input matInput type="text" placeholder="H2J8B2" name="postalcode">
-      
+      <mat-error *ngIf="form.get('postalcode')?.hasError('required')">
+        Votre nom est <strong>requis</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Commentaire</mat-label>
       <textarea matInput placeholder="Votre commentaire" name="comments"></textarea>
-      
+      <mat-error *ngIf="form.get('comments')?.hasError('required')">
+        Votre nom est <strong>requis</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-card-actions align="end">
