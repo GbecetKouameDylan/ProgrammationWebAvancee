@@ -14,11 +14,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-AppComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,8 @@ AppComponent
     MatProgressBarModule,
     MatSelectModule,
     ReactiveFormsModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

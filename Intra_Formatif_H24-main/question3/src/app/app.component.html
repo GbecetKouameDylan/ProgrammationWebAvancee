@@ -6,13 +6,13 @@
 
 <h1>Formulaire qui sert à rien</h1>
 <mat-card style="width: 700px; margin: auto; padding: 20px;">
-  <form >
+  <form [formGroup]="FormGroup">
 
     <mat-form-field style="width: 100%">
-        <mat-label>Nom</mat-label>
-        <input matInput type="text" placeholder="Nom et prénom" name="name" >
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName = "name"  type="text" placeholder="Nom et prénom" name="name" >
 
-      <mat-error *ngIf="form.get('name')?.hasError('required')">
+      <mat-error *ngIf="FormGroup.get('name')?.hasError('required')">
         Votre nom est <strong>requis</strong>
       </mat-error>
 
@@ -20,38 +20,53 @@
 
     <mat-form-field style="width: 100%">
       <mat-label>Numéro de rue</mat-label>
-      <input matInput type="number" placeholder="5230" name="roadnumber">
-      <mat-error *ngIf="form.get('roadnumber')?.hasError('required')">
+      <input matInput formControlName = "roadnumber"  type="number" placeholder="5230" name="roadnumber">
+      <mat-error  *ngIf="FormGroup.get('roadnumber')?.hasError('required')">
         Votre nom est <strong>requis</strong>
+      </mat-error>
+      <mat-error  *ngIf="FormGroup.get('roadnumber')?.hasError('min')">
+        Le nombre doit etre 	Entre 1000 et 9999
+      </mat-error>
+      <mat-error  *ngIf="FormGroup.get('roadnumber')?.hasError('max')">
+        Le nombre doit etre 	Entre 1000 et 9999
       </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
-        <mat-label>Rue</mat-label>
-        <input matInput type="text" placeholder="Resther" name="rue">
-      <mat-error *ngIf="form.get('rue')?.hasError('required')">
+      <mat-label>Rue</mat-label>
+      <input matInput formControlName="rue" type="text" placeholder="Resther" name="rue">
+      <mat-error *ngIf="FormGroup.get('rue')?.hasError('required')">
         Votre nom est <strong>requis</strong>
       </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Code Postal</mat-label>
-      <input matInput type="text" placeholder="H2J8B2" name="postalcode">
-      <mat-error *ngIf="form.get('postalcode')?.hasError('required')">
+      <input matInput formControlName="postalcode"  type="text" placeholder="H2J8B2" name="postalcode">
+      <mat-error *ngIf="FormGroup.get('postalcode')?.hasError('required')">
         Votre nom est <strong>requis</strong>
+      </mat-error>
+      <mat-error *ngIf="FormGroup.get('postalcode')?.hasError('pattern')">
+       vous devez ecrire de cette maniere P2U 3Q4
       </mat-error>
     </mat-form-field>
 
     <mat-form-field style="width: 100%">
       <mat-label>Commentaire</mat-label>
-      <textarea matInput placeholder="Votre commentaire" name="comments"></textarea>
-      <mat-error *ngIf="form.get('comments')?.hasError('required')">
+      <textarea matInput formControlName = "comments" placeholder="Votre commentaire" name="comments"></textarea>
+      <mat-error *ngIf="FormGroup.get('comments')?.hasError('required')">
         Votre nom est <strong>requis</strong>
+      </mat-error>
+      <mat-error *ngIf="FormGroup.get('comments')?.hasError('Coms')">
+        le commentaire doit contenir au minimum 10 mot
+      </mat-error>
+      <mat-error *ngIf="FormGroup.get('comments')?.hasError('name')">
+        un commentaire ne doit pas contenir le nom
       </mat-error>
     </mat-form-field>
 
     <mat-card-actions align="end">
-      <button  mat-raised-button color="primary" >Acheter</button>
+      <button   mat-raised-button color="primary" [disabled]="!FormGroup.valid" >Acheter</button>
     </mat-card-actions>
   </form>
 </mat-card>
