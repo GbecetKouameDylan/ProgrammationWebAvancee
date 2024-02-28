@@ -1,5 +1,6 @@
 <div style="display: flex; margin: 20px; justify-content: center;">
 
-  <button  *ngIf="service     " mat-raised-button [routerLink]="['/cat']" color="primary" style="margin-right: 20px;">Acheter un animal !</button>
+  <button *ngIf="service.currentUser?.prefercat == true " mat-raised-button [routerLink]="['/cat']" color="primary" style="margin-right: 20px;">Acheter un animal !</button>
+  <button *ngIf="service.currentUser?.prefercat == false " mat-raised-button [routerLink]="['/dog']" color="primary" style="margin-right: 20px;">Acheter un animal !</button>
 </div>
 

@@ -28,6 +28,6 @@ export class UserService {
     this.currentUser = undefined;
     localStorage.removeItem(USER_KEY);
 
-    this.route.navigate(['/home'])
+    this.route.navigate(['/login'])
   }
 }
